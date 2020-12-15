@@ -10,7 +10,7 @@ client.on('ready', () => {
     setInterval(() => {
         client.user.setActivity(
            quotes[Math.floor(quotes.length * Math.random())], 
-            {type: 'LISTENING'}
+            {type: 'PLAYING'}
         );
       }, 5000);
 });
