@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
 
     var embed = new discord.MessageEmbed()
     .addFields(
-        { name: 'Help Command' , value: '$Minecraft\n$Spotify'}
+        { name: 'Help Command' , value: '$Minecraft\n$Spotify\n$checkstock'}
     )
     .setColor("#D40004")
     .setTimestamp()

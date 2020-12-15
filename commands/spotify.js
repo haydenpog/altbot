@@ -8,6 +8,7 @@ exports.run = (client, message, args) => {
     message.delete(message)
 
     if (message.member.roles.cache.find(r => r.id === "788126889931833414")){
+        let logs = message.guild.channels.cache.find(l => l.id === '780522981901860894')
         fs.readFile('./spotify.txt', function(err, data){
             if(err) throw err;
             data = data + '';
@@ -19,7 +20,16 @@ exports.run = (client, message, args) => {
             .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2000px-Spotify_logo_without_text.svg.png")
             .setColor("#D40004")
             .setTimestamp()
-            message.author.send(embed)
+            message.author.send(embed);
+
+            var gened = new Discord.MessageEmbed()
+            .addFields(
+                { name: 'Gened new Minecraft alt' , value: `By: ${message.author}`}
+            )
+            .setAuthor(message.author.username , message.author.avatarURL())
+            .setColor("#D40004")
+            .setTimestamp()
+            logs.send(gened);
 
             message.reply("Sent you Spotify Account!").then(m => {
                 setTimeout(() => {
