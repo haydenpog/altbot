@@ -4,7 +4,7 @@ const fs = require("fs")
 exports.run = (client, message, args) => {
     message.delete(message)
     if (message.member.roles.cache.find(r => r.id === "788126889931833414")){ 
-        let logs = message.guild.channels.cache.find(l => l.id === '780522981901860894')
+        let logs = message.guild.channels.cache.find(l => l.id === '789132409315917884')
         fs.readFile('./minecraft.txt', function(err, data){
             if(err) throw err;
             data = data + '';
